@@ -11,7 +11,7 @@ def preprocess_data_sample(sample_ind: int, metadata) -> float:
     return df, metadata['time_rel(sec)'].iloc[sample_ind]
 
 def tv_analysis(chunk_size: int, v: NDArray) -> None:
-    out = np.abs(v)
+    out = v
     for i in range(chunk_size):
-        out = np.abs(out[1:] - out[:-1])
+        out = out[1:] - out[:-1]
     return out
