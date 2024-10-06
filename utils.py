@@ -79,7 +79,3 @@ def smooth_decays(time: NDArray, signal: NDArray, arrive: int | float, sampling_
 
     plt.tight_layout()
     plt.show()
-
-def zero_padding(x: torch.Tensor, len=60) -> torch.Tensor:
-    pad_size = len - x.size(-2)
-    return torch.nn.functional.pad(x, (0, 0, 0, pad_size))
